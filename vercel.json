@@ -1,0 +1,4 @@
+{
+  "outputDirectory": "output",
+  "rewrites": [{ "source": "/", "destination": "/digest.html" }]
+}

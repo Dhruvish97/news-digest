@@ -33,7 +33,7 @@ for _line in _env_lines:
 # ── Config ─────────────────────────────────────────────────────────────────────
 OUTPUT_DIR = Path(__file__).parent / "output"
 OUTPUT_FILE = OUTPUT_DIR / "digest.html"
-MODEL = "claude-opus-4-6"
+MODEL = "claude-haiku-4-5-20251001"
 SEARCH_TOOL = "web_search_20260209"
 
 # Category → (accent color, dark gradient start, dark gradient end, emoji)
@@ -168,7 +168,7 @@ Each object:
     for _ in range(10):
         response = client.messages.create(
             model=MODEL,
-            max_tokens=4096,
+            max_tokens=2048,
             tools=[{"type": SEARCH_TOOL, "name": "web_search"}],
             messages=messages,
         )

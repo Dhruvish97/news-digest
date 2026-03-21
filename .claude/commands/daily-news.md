@@ -18,9 +18,14 @@ Once you have all 10 stories, do the following steps in order:
 python3 /Users/dhruvish/Claude/news_digest/digest.py --from-file /tmp/digest_stories.json
 ```
 
-3. Commit and deploy:
+3. Commit and push to GitHub (this automatically triggers a Vercel deployment):
 ```bash
 cd /Users/dhruvish/Claude/news_digest && git add output/digest.html && git commit -m "chore: daily digest $(date +%Y-%m-%d)" && git push
 ```
 
-The Vercel site will auto-update once pushed. Confirm the push succeeded and share the Vercel URL.
+4. Get the live Vercel URL:
+```bash
+cd /Users/dhruvish/Claude/news_digest && git remote get-url origin | sed 's|https://github.com/||;s|\.git||'
+```
+
+Report success and tell the user their digest is live. The Vercel deployment triggers automatically on push — it typically goes live within 30 seconds. Direct them to check https://vercel.com/dashboard to see the deployment status and get their public URL.
